@@ -9,9 +9,9 @@
 
 static const unsigned int WIDTH = 1000, HEIGHT = 1000;
 
-float cntr = 3.5f;
+float cntr = 1.5f;
 float centriod[2] = {0.0f, 0.0f};
-float angle = 0.0f;
+float distort = 0.0f;
 float breath = 0.0f;
 
 int main()
@@ -69,9 +69,14 @@ int main()
 
     int U_CENTER = glGetUniformLocation(shaderProcess.getID(), "_center");
     int U_RADIUS = glGetUniformLocation(shaderProcess.getID(), "_radius");
-    int U_COS = glGetUniformLocation(shaderProcess.getID(), "_rotationCos");
-    int U_SINE = glGetUniformLocation(shaderProcess.getID(), "_rotationSin");
-    int U_BREATH = glGetUniformLocation(shaderProcess.getID(), "_breath");
+    int U_AMPLITUDE = glGetUniformLocation(shaderProcess.getID(), "_amplitude");
+    int U_FREQUENCY = glGetUniformLocation(shaderProcess.getID(), "_frequency");
+    //int U_COS = glGetUniformLocation(shaderProcess.getID(), "_rotationCos");
+    //int U_SINE = glGetUniformLocation(shaderProcess.getID(), "_rotationSin");
+    // int U_BREATH = glGetUniformLocation(shaderProcess.getID(), "_breath");
+    int U_DISTORT = glGetUniformLocation(shaderProcess.getID(), "_distort");
+
+    glUniform1f(U_AMPLITUDE, 20.0f);
 
     std::chrono::duration<double> frameDuration(1.0 / 60);
 
@@ -83,19 +88,20 @@ int main()
 
         glUniform1f(U_RADIUS, cntr);
         glUniform2fv(U_CENTER, 1, &centriod[0]);
+        glUniform1f(U_DISTORT, distort);
         
-        glUniform1f(U_COS, std::cos(angle));
-        glUniform1f(U_SINE, std::sin(angle));
+       // glUniform1f(U_COS, std::cos(angle));
+       // glUniform1f(U_SINE, std::sin(angle));
 
-        glUniform1f(U_BREATH, breath);
+        glUniform1f(U_FREQUENCY, breath);
 
         glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 
         cntr += 0.001f;
-        breath += 0.01f;
+        breath += 0.5f;
         
 
-        angle += 0.1f;
+        distort += 0.00371f;
 
         glfwSwapBuffers(_WINDOW);
         glfwPollEvents();
