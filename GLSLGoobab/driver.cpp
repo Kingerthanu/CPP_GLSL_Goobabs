@@ -7,9 +7,9 @@
 #include <random>
 
 
-static const unsigned int WIDTH = 1800, HEIGHT = 1800;
+static const unsigned int WIDTH = 1000, HEIGHT = 1000;
 
-float cntr = 0.5f;
+float cntr = 3.5f;
 float centriod[2] = {0.0f, 0.0f};
 float angle = 0.0f;
 float breath = 0.0f;
@@ -73,8 +73,6 @@ int main()
     int U_SINE = glGetUniformLocation(shaderProcess.getID(), "_rotationSin");
     int U_BREATH = glGetUniformLocation(shaderProcess.getID(), "_breath");
 
-    std::cout << U_CENTER << ' ' << U_RADIUS << '\n';
-
     std::chrono::duration<double> frameDuration(1.0 / 60);
 
     while (!glfwWindowShouldClose(_WINDOW)) {
@@ -94,7 +92,7 @@ int main()
         glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 
         cntr += 0.001f;
-        breath += 0.1f;
+        breath += 0.01f;
         
 
         angle += 0.1f;
