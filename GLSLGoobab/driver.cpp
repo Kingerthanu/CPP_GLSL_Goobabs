@@ -7,12 +7,25 @@
 #include <random>
 
 
-static const unsigned int WIDTH = 1000, HEIGHT = 1000;
+static const float _RESOLUTION[2] = {1800, 1800};
+static float _CENTRIOD[2] = { 0.0f, 0.0f };
 
-float cntr = 1.5f;
-float centriod[2] = {0.0f, 0.0f};
-float distort = 0.0f;
-float breath = 0.0f;
+
+
+
+// Define cursor position callback function
+void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
+    // Normalize cursor position to the range [-1, 1]
+    _CENTRIOD[0] = (float)(2.0 * xpos / _RESOLUTION[0] - 1.0);
+    _CENTRIOD[1] = (float)(1.0 - 2.0 * ypos / _RESOLUTION[1]);
+
+    // Update uniform variable representing cursor position
+    //glUniform2fv(U_CENTER, 1, &_CENTRIOD[0]);
+
+
+
+}
+
 
 int main()
 {
@@ -23,7 +36,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* _WINDOW = glfwCreateWindow(WIDTH, HEIGHT, "Goobab", NULL, NULL);
+    GLFWwindow* _WINDOW = glfwCreateWindow(_RESOLUTION[0], _RESOLUTION[1], "Goobab", NULL, NULL);
 
     if (!_WINDOW) {
         glfwTerminate();
@@ -67,18 +80,22 @@ int main()
 
    
 
-    int U_CENTER = glGetUniformLocation(shaderProcess.getID(), "_center");
-    int U_RADIUS = glGetUniformLocation(shaderProcess.getID(), "_radius");
-    int U_AMPLITUDE = glGetUniformLocation(shaderProcess.getID(), "_amplitude");
-    int U_FREQUENCY = glGetUniformLocation(shaderProcess.getID(), "_frequency");
-    //int U_COS = glGetUniformLocation(shaderProcess.getID(), "_rotationCos");
-    //int U_SINE = glGetUniformLocation(shaderProcess.getID(), "_rotationSin");
-    // int U_BREATH = glGetUniformLocation(shaderProcess.getID(), "_breath");
-    int U_DISTORT = glGetUniformLocation(shaderProcess.getID(), "_distort");
+    int U_RESOLUTION  = glGetUniformLocation(shaderProcess.getID(), "resolution");
+    int U_TIMER = glGetUniformLocation(shaderProcess.getID(), "time");
+    //U_CENTER = glGetUniformLocation(shaderProcess.getID(), "u_mouse");
 
-    glUniform1f(U_AMPLITUDE, 20.0f);
+    glUniform2fv(U_RESOLUTION, 1, &_RESOLUTION[0]);
+    //glUniform2fv(U_CENTER, 1, &_CENTRIOD[0]);
+ 
 
     std::chrono::duration<double> frameDuration(1.0 / 60);
+
+    //std::cout << U_RESOLUTION << ' ' << U_CENTER  << '\n';
+
+    float tick = 1.0f;
+
+    glfwSetCursorPosCallback(_WINDOW, cursor_position_callback);
+
 
     while (!glfwWindowShouldClose(_WINDOW)) {
 
@@ -86,22 +103,18 @@ int main()
 
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUniform1f(U_RADIUS, cntr);
-        glUniform2fv(U_CENTER, 1, &centriod[0]);
-        glUniform1f(U_DISTORT, distort);
-        
-       // glUniform1f(U_COS, std::cos(angle));
-       // glUniform1f(U_SINE, std::sin(angle));
-
-        glUniform1f(U_FREQUENCY, breath);
-
+        glUniform1f(U_TIMER, tick);
+        tick += 0.001271f;
+        if (2.5f <= tick && tick <= 3.5f) {
+            tick = 3.71f;
+        }
+        else if (6.0f <= tick && tick <= 7.0f) {
+            tick = 7.05f;
+        }
+        else if (tick >= 7.3f) {
+            tick = 1.0f;
+        }
         glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-
-        cntr += 0.001f;
-        breath += 0.5f;
-        
-
-        distort += 0.00371f;
 
         glfwSwapBuffers(_WINDOW);
         glfwPollEvents();
