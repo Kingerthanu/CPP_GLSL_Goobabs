@@ -11,6 +11,19 @@ static const float _RESOLUTION[2] = {1800, 1800};
 static float _CENTRIOD[2] = { 0.0f, 0.0f };
 float tick = 1.0f;
 float tickStep = 0.0f;
+bool mousePressed = false;
+
+
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+    if (button == GLFW_MOUSE_BUTTON_LEFT) {
+        if (action == GLFW_PRESS) {
+            mousePressed = true;
+        }
+        else if (action == GLFW_RELEASE) {
+            mousePressed = false;
+        }
+    }
+}
 
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
@@ -29,12 +42,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 // Define cursor position callback function
 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
-    // Normalize cursor position to the range [-1, 1]
-    _CENTRIOD[0] = (float)(2.0 * xpos / _RESOLUTION[0] - 1.0);
-    _CENTRIOD[1] = (float)(1.0 - 2.0 * ypos / _RESOLUTION[1]);
 
-    // Update uniform variable representing cursor position
-    //glUniform2fv(U_CENTER, 1, &_CENTRIOD[0]);
+    if(mousePressed){
+        _CENTRIOD[0] = (float)(2.0 * xpos / _RESOLUTION[0] - 1.0);
+        _CENTRIOD[1] = (float)(1.0 - 2.0 * ypos / _RESOLUTION[1]);
+    }
 
 
 
@@ -92,13 +104,11 @@ int main()
     glEnableVertexAttribArray(0);
 
 
-   
-
-    int U_RESOLUTION  = glGetUniformLocation(shaderProcess.getID(), "resolution");
     int U_TIMER = glGetUniformLocation(shaderProcess.getID(), "time");
-    //U_CENTER = glGetUniformLocation(shaderProcess.getID(), "u_mouse");
+    int U_CENTER = glGetUniformLocation(shaderProcess.getID(), "center");
+    int U_ZOOM = glGetUniformLocation(shaderProcess.getID(), "zoom");
 
-    glUniform2fv(U_RESOLUTION, 1, &_RESOLUTION[0]);
+    glUniform2fv(glGetUniformLocation(shaderProcess.getID(), "resolution"), 1, &_RESOLUTION[0]);
     //glUniform2fv(U_CENTER, 1, &_CENTRIOD[0]);
  
 
@@ -108,6 +118,9 @@ int main()
 
     glfwSetCursorPosCallback(_WINDOW, cursor_position_callback);
     glfwSetKeyCallback(_WINDOW, key_callback);
+    glfwSetMouseButtonCallback(_WINDOW, mouse_button_callback);
+
+    float zoom = 4.0f;
 
     while (!glfwWindowShouldClose(_WINDOW)) {
 
@@ -116,6 +129,8 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUniform1f(U_TIMER, tick);
+        glUniform1f(U_ZOOM, zoom);
+        
 
         if (2.5f <= tick && tick <= 3.5f) {
             tick = 3.71f;
@@ -126,6 +141,16 @@ int main()
         else if (tick >= 7.3f) {
             tick = 1.0f;
         }
+
+
+        if (mousePressed) {
+            glUniform2fv(U_CENTER, 1, &_CENTRIOD[0]);
+        }
+
+    
+         zoom -= 0.00002f;
+
+
         glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 
         glfwSwapBuffers(_WINDOW);
