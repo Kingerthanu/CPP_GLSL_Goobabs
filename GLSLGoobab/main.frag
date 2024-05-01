@@ -15,7 +15,7 @@ void main() {
     uv = uv * zoom - center;
 
     // Calculate complex constant c based on time
-    vec2 c = vec2(-0.91289, -0.386 * cos(time));
+    vec2 c = vec2(-0.2989 * sin(time), 0.386 * cos(time));
 
     // Initialize z as the current UV coordinates
     vec2 z = uv;

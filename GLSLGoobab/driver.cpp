@@ -148,7 +148,7 @@ int main()
         }
 
     
-         zoom -= 0.00002f;
+         zoom -= 0.0002f;
 
 
         glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
