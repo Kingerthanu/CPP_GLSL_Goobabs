@@ -9,9 +9,23 @@
 
 static const float _RESOLUTION[2] = {1800, 1800};
 static float _CENTRIOD[2] = { 0.0f, 0.0f };
+float tick = 1.0f;
+float tickStep = 0.0f;
 
 
-
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_ENTER && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
+        tick += tickStep;
+    }
+    else if (key == GLFW_KEY_UP && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
+        tickStep += 0.0001f;
+        std::cout << tickStep << '\n';
+    }
+    else if (key == GLFW_KEY_DOWN && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
+        tickStep -= 0.0001f;
+        std::cout << tickStep << '\n';
+    }
+}
 
 // Define cursor position callback function
 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
@@ -92,10 +106,8 @@ int main()
 
     //std::cout << U_RESOLUTION << ' ' << U_CENTER  << '\n';
 
-    float tick = 1.0f;
-
     glfwSetCursorPosCallback(_WINDOW, cursor_position_callback);
-
+    glfwSetKeyCallback(_WINDOW, key_callback);
 
     while (!glfwWindowShouldClose(_WINDOW)) {
 
@@ -104,7 +116,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUniform1f(U_TIMER, tick);
-        tick += 0.001271f;
+
         if (2.5f <= tick && tick <= 3.5f) {
             tick = 3.71f;
         }
