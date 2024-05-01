@@ -15,7 +15,8 @@ In This Current Instance We Are Using A GLSL Window To Pull Cursor And Keypress 
 
 ...
 
-The Current Program Is Generating A Julia Set Mandelbrot.
+The Current Program Is Generating A Julia Set Mandelbrot In Which Is Adjusted To Only Generate As A Uniform Circle.
+As the Process Runs, You Will See Generally 7 Main Mandel Wormholes Generating All Stepping From A Generally Equally Spaced Section.
 
 ----------------------------------------------------------------------------
 
