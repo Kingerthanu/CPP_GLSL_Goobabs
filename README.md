@@ -13,7 +13,7 @@
 
 In This Current Instance We Are Using A GLSL Window To Pull Cursor And Keypress Info From The User. From this, The User Is Able To Pick The Location In Which To Center The Viewport On. We Also Give Them The Controls Of:
 
-...
+- Enter: Move Forward One Time Increment In .frag Simulation
 
 The Current Program Is Generating A Julia Set Mandelbrot In Which Is Adjusted To Only Generate As A Uniform Circle; Allowing A Generally Uniform Designed Fractal.
 As the Process Runs, You Will See Generally 7 Main Mandel Wormholes Generating All Stepping From Equally Spaced Sections.
