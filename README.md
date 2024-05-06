@@ -18,6 +18,10 @@ In This Current Instance We Are Using A GLSL Window To Pull Cursor And Keypress 
 The Current Program Is Generating A Julia Set Mandelbrot In Which Is Adjusted To Only Generate As A Uniform Circle; Allowing A Generally Uniform Designed Fractal.
 As the Process Runs, You Will See Generally 7 Main Mandel Wormholes Generating All Stepping From Equally Spaced Sections.
 
+
+
+<img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/25880292-97b8-453a-b1a1-cd960585b23d" alt="Cornstarch <3" width="55" height="49"> <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/25880292-97b8-453a-b1a1-cd960585b23d" alt="Cornstarch <3" width="55" height="49"> <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/25880292-97b8-453a-b1a1-cd960585b23d" alt="Cornstarch <3" width="55" height="49"> <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/25880292-97b8-453a-b1a1-cd960585b23d" alt="Cornstarch <3" width="55" height="49">
+
 ----------------------------------------------------------------------------
 
 <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/9efb7029-9f41-45b9-a392-e44bf908e01e" alt="Cornstarch <3" width="55" height="49"> <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/9efb7029-9f41-45b9-a392-e44bf908e01e" alt="Cornstarch <3" width="55" height="49"> <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/9efb7029-9f41-45b9-a392-e44bf908e01e" alt="Cornstarch <3" width="55" height="49"> <img src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/9efb7029-9f41-45b9-a392-e44bf908e01e" alt="Cornstarch <3" width="55" height="49">
