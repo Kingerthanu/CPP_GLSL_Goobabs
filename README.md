@@ -15,6 +15,16 @@ In This Current Instance We Are Using A GLSL Window To Pull Cursor And Keypress 
 
 - Enter: Move Forward One Time Increment In .frag Simulation
 
+- Up-Arrow: Increase Speed Of Individual Increment (Fast Forward)
+
+- Down-Arrow: Decrease Speed Of Individual Increment (Rewind)
+
+- Left-Arrow: Increase Speed Of Our Zoom In .frag Simulation
+
+- Right-Arrow: Decrease Speed Of Our Zoom In .frag Simulation
+
+- Left-Click With Or Without Drag: Set Viewport Center To Zoom Into
+
 The Current Program Is Generating A Julia Set Mandelbrot In Which Is Adjusted To Only Generate As A Uniform Circle; Allowing A Generally Uniform Designed Fractal.
 As the Process Runs, You Will See Generally 7 Main Mandel Wormholes Generating All Stepping From Equally Spaced Sections.
 
