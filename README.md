@@ -1,6 +1,6 @@
 # CPP_GLSL_Goobabs
 
-  Big Forked Repository Holding Some Throw-Away GLSL .frag Programs. While No Functional Drive To These, Still Quite Epic WinStyle.
+  Big Forked Repository Holding Some Throw-Away GLSL .frag Programs. 
 
   ----------------------------------------------------------------------------
 
