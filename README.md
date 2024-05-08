@@ -9,7 +9,11 @@
 
 **The Breakdown:**
 
-  This Is Branch Will Display Collages Of All Varying Branches And Their Rendering Techniques. The Code Held Here Is A Simply Copy-Over Of A Early Version Of (https://github.com/Kingerthanu/CPP_GLSL_Goobabs/tree/Amplitudal/Frequency_FractalTrigWaves); All General Documentation Will Be Covered Here :)
+  This Is Branch Will Display Collages Of All Varying Branches And Their Rendering Techniques. The Code Held Here Is A Simply Copy-Over Of A Early Version Of: 
+  
+  (https://github.com/Kingerthanu/CPP_GLSL_Goobabs/tree/Amplitudal/Frequency_FractalTrigWaves)
+  
+  All General Documentation Will Be Covered Here :)
 
 
 
