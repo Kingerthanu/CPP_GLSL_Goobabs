@@ -9,24 +9,10 @@
 
 **The Breakdown:**
 
-  Program Works With C++ To Generate A OpenGL .frag Shader To Generate A User-Throttled Fractal.
+  Program Works With C++ To Generate A OpenGL .frag Shader; This Version Doesn't Contain Any User-Input.
 
-In This Current Instance We Are Using A GLSL Window To Pull Cursor And Keypress Info From The User. From this, The User Is Able To Pick The Location In Which To Center The Viewport On. We Also Give Them The Controls Of:
-
-- Enter: Move Forward One Time Increment In .frag Simulation
-
-- Up-Arrow: Increase Speed Of Individual Increment (Fast Forward)
-
-- Down-Arrow: Decrease Speed Of Individual Increment (Rewind)
-
-- Left-Arrow: Increase Speed Of Our Zoom In .frag Simulation
-
-- Right-Arrow: Decrease Speed Of Our Zoom In .frag Simulation
-
-- Left-Click With Or Without Drag: Set Viewport Center To Zoom Into
-
-The Current Program Is Generating A Julia Set Mandelbrot In Which Is Adjusted To Only Generate As A Uniform Circle; Allowing A Generally Uniform Designed Fractal.
-As the Process Runs, You Will See Generally 7 Main Mandel Wormholes Generating All Stepping From Equally Spaced Sections.
+  The Current Program Uses Sine And Cosine With A Tick Timer On The xy-Coordinates Of Pixels To Give Waves Off. We Currently Have A Constant Frequency,
+  But Is Able To Have A Variable Frequency And Amplitude To The Waves.
 
 
 
