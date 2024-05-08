@@ -48,8 +48,6 @@ As the Process Runs, You Will See Generally 7 Main Mandel Wormholes Generating A
 
 <img width="857" alt="image" src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/8ff0b2d6-a4d8-4c1e-a72e-1bfb2d7795df">
 
-<img width="890" alt="image" src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/aa70c2e1-2efc-44b7-8e34-92344aae6d03">
-
 
 
 
