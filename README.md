@@ -11,8 +11,11 @@
 
   Program Works With C++ To Generate A OpenGL .frag Shader; This Version Doesn't Contain Any User-Input.
 
-  The Current Program Uses Sine And Cosine With A Tick Timer On The xy-Coordinates Of Pixels To Give Waves Off. We Currently Have A Constant Frequency,
-  But Is Able To Have A Variable Frequency And Amplitude To The Waves.
+ The Program Starts Off By Creating A Tick Timer, GLFW Window As Well As Defined Shader Class With The Shader Code; Passing In Uniforms For The Current Tick Value For Each Rendering
+ Call To The Shader. The Current GLSL .frag Program Uses Sine And Cosine With A Tick Timer On The xy-Coordinates Of Pixels To Give Waves Off. We Currently Have A Constant Frequency,
+But Is Able To Have A Variable Frequency And Amplitude To The Waves.
+
+
 
 
 
