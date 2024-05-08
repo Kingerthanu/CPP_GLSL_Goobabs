@@ -9,13 +9,17 @@
 
 **The Breakdown:**
 
-  Program Works With C++ To Generate A OpenGL .frag Shader; This Version Doesn't Contain Any User-Input.
+  Program Works With C++ To Generate A OpenGL .frag Fractal Shader; This Version Doesn't Contain Any User-Input.
 
  The Program Starts Off By Creating A Tick Timer, GLFW Window As Well As Defined Shader Class With The Shader Code; Passing In Uniforms For The Current Tick Value For Each Rendering
- Call To The Shader. The Current GLSL .frag Program Uses Sine And Cosine With A Tick Timer On The xy-Coordinates Of Pixels To Give Waves Off. We Currently Have A Constant Frequency,
-But Is Able To Have A Variable Frequency And Amplitude To The Waves.
+ Call To The Shader. 
+ 
+ The Current GLSL .frag Program Uses Sine And Cosine With A Tick Timer On The xy-Coordinates Of Pixels To Give Waves Off. We Currently Have A Constant Frequency,
+But Is Able To Have A Variable Frequency And Amplitude To The Waves. We Allowed These Waves To Fragmentize, To Allow The Capability Of This Being A Infinite Fractal In Which The User Can Zoom Into
+(Right Now Haven't Added This Zoom......).
 
-
+While Quite A Bland Program; It Taught Me A Lot About Pixel-Manipulation In .frag Code; I Also Tried Not To Use Outside Resources To Create A Fractal Design And Tried Conceptualizing How To
+Implement This And Somehow It Worked And This Greatly Helped Me Understand Much More About GLSL, As Well As Better Ways To Think About Rendering In A More Theoretical Way.
 
 
 
