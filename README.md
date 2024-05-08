@@ -27,7 +27,7 @@
 
 **Features/Snapshots:**
 
-![Untitledvideo1-ezgif com-optimize](https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/2bef42d6-bb5d-4876-b8c2-54af29261d1f)
+<img width="895" alt="image" src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/2bef42d6-bb5d-4876-b8c2-54af29261d1f">
 
 <img width="895" alt="image" src="https://github.com/Kingerthanu/CPP_GLSL_Goobabs/assets/76754592/55d66eb1-cdf2-4004-99c5-989a890b7566">
 
